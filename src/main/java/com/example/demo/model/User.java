@@ -38,6 +38,9 @@ public class User {
     @NotBlank
     @Size(min = 6, max = 100)
     private String password;
+
+    @Column(name = "verification_code", updatable = false)
+    private String verificationCode;
     @Lob
     private String avatar;
     @ManyToMany(fetch = FetchType.EAGER)
@@ -61,10 +64,12 @@ public class User {
     public User(  @NotBlank @Size(min = 3, max = 50)String name,
                   @NotBlank @Size(min = 3, max = 50)String username,
                   @NotBlank @Size(max = 50) @Email String email,
+                  String avatar,
                   @NotBlank @Size(min = 6, max = 100)String encode) {
         this.name = name;
         this.username = username;
         this.email = email;
+        this.avatar = avatar;
         this.password = encode;
     }
 

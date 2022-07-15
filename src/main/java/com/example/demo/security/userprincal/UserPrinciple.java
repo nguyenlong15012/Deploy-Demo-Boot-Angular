@@ -53,6 +53,10 @@ public class UserPrinciple implements UserDetails {
         this.name = name;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles;
@@ -67,6 +71,8 @@ public class UserPrinciple implements UserDetails {
     public String getUsername() {
         return username;
     }
+
+
 
     @Override
     public boolean isAccountNonExpired() {

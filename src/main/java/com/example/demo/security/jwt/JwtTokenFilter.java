@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -39,7 +40,7 @@ private UserDetailsService userDetailsService;
         }
         filterChain.doFilter(request,response);
     }
-    private String getJwt(HttpServletRequest request){
+    public String getJwt(HttpServletRequest request){
         String authHeader = request.getHeader("Authorization");
         if(authHeader !=null && authHeader.startsWith("Bearer")){
             return authHeader.replace("Bearer", "");
