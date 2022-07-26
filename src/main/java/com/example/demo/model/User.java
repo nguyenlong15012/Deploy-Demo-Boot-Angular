@@ -39,8 +39,8 @@ public class User {
     @Size(min = 6, max = 100)
     private String password;
 
-    @Column(name = "verification_code", updatable = false)
-    private String verificationCode;
+//    @Column(name = "verification_code", updatable = false)
+//    private String verificationCode;
     @Lob
     private String avatar;
     @ManyToMany(fetch = FetchType.EAGER)
